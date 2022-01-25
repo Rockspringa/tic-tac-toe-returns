@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#grid {
+  background-color: rgb(202, 255, 117);
+}

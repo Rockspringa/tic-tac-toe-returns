@@ -15,7 +15,8 @@ class App extends React.Component {
   render() {
     return (
       <div
-        className="w-fit grid grid-cols-3 grid-rows-3 m-auto"
+        id="grid"
+        className="w-fit grid grid-cols-3 grid-rows-3 my-3 mx-auto gap-1 p-1"
         onClick={this.changeTurn}
       >
         <Cell xTurn={this.state.turn} />

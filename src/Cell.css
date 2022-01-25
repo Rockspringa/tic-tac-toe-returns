@@ -1,7 +1,53 @@
-.x {
-    background-color: red;
+.blank {
+  background-color: rgb(255, 255, 177, 0.5);
+}
+
+.x,
+.o {
+  position: relative;
+}
+
+.x::before,
+.x::after {
+  background-color: rgb(138, 96, 255);
+  content: "";
+
+  width: 125%;
+  height: 10%;
+  top: 45%;
+  left: -12%;
+  position: absolute;
+
+  border-radius: 25px;
+  transform: translate(0, -50%);
+}
+.x::before {
+  transform: rotate(45deg);
+}
+.x::after {
+  transform: rotate(-45deg);
+}
+
+.x::after {
+  position: absolute;
+  background-color: rgb(138, 96, 255);
 }
 
 .o {
-    background-color: green;
+  background-color: rgb(64, 255, 214);
+  border-radius: 50%;
+}
+
+.o::after {
+  content: "";
+  background-color: rgb(202, 255, 117);
+
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -16,7 +16,7 @@ class Cell extends React.Component {
   render() {
     return (
       <div
-        className={`w-40 h-40 ${this.state.occupiedBy}`}
+        className={`w-40 max-w-full aspect-square ${this.state.occupiedBy}`}
         onClick={this.occupyCell}
       />
     );
