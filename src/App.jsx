@@ -1,11 +1,37 @@
 import Cell from "./Cell";
+import React from "react";
 
-function App() {
-  return (
-    <main>
-      <Cell />
-    </main>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { turn: false };
+    this.changeTurn = this.changeTurn.bind(this);
+  }
+
+  changeTurn() {
+    this.setState({ turn: !this.state.turn });
+  }
+
+  render() {
+    return (
+      <div
+        className="w-fit grid grid-cols-3 grid-rows-3 m-auto"
+        onClick={this.changeTurn}
+      >
+        <Cell xTurn={this.state.turn} />
+        <Cell xTurn={this.state.turn} />
+        <Cell xTurn={this.state.turn} />
+
+        <Cell xTurn={this.state.turn} />
+        <Cell xTurn={this.state.turn} />
+        <Cell xTurn={this.state.turn} />
+
+        <Cell xTurn={this.state.turn} />
+        <Cell xTurn={this.state.turn} />
+        <Cell xTurn={this.state.turn} />
+      </div>
+    );
+  }
 }
 
 export default App;

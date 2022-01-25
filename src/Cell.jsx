@@ -1,17 +1,26 @@
+import "./Cell.css";
+import React from "react";
+
 class Cell extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { occupiedBy: "blank" };
+    this.occupyCell = this.occupyCell.bind(this);
+  }
 
-    constructor(props) {
-        props.state = `w-10 h-10 ${props.state || "blank"}`;
-        super(props);
-    }
+  occupyCell(e) {
+    if (this.state.occupiedBy === "blank")
+      this.setState({ occupiedBy: this.props.xTurn ? "x" : "o" });
+  }
 
-    constructor() {
-        super({ state: "w-10 h-10 blank" });
-    }
-
-    render() {
-        <div className={ this.props.state } onClick={} />;
-    }
+  render() {
+    return (
+      <div
+        className={`w-40 h-40 ${this.state.occupiedBy}`}
+        onClick={this.occupyCell}
+      />
+    );
+  }
 }
 
 export default Cell;
