@@ -2,14 +2,33 @@
   background-color: rgb(255, 255, 177, 0.5);
 }
 
-.x,
-.o {
+.cross,
+.zero {
   position: relative;
 }
 
-.x::before,
-.x::after {
-  background-color: rgb(138, 96, 255);
+.winner span {
+  @apply text-lime-2;
+  @apply p-2;
+  background-color: rgba(40, 40, 40, 0.7);
+  
+  font-weight: bolder;
+  font-size: 2.5rem;
+
+  width: fit-content;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+
+  z-index: 3;
+  border-radius: 12px;
+  transform: translate(-50%, -50%);
+}
+
+.cross::before,
+.cross::after {
+  @apply bg-violet-2;
   content: "";
 
   width: 125%;
@@ -21,26 +40,21 @@
   border-radius: 25px;
   transform: translate(0, -50%);
 }
-.x::before {
+.cross::before {
   transform: rotate(45deg);
 }
-.x::after {
+.cross::after {
   transform: rotate(-45deg);
 }
 
-.x::after {
-  position: absolute;
-  background-color: rgb(138, 96, 255);
-}
-
-.o {
-  background-color: rgb(64, 255, 214);
+.zero {
+  @apply bg-aqua;
   border-radius: 50%;
 }
 
-.o::after {
+.zero::after {
   content: "";
-  background-color: rgb(202, 255, 117);
+  @apply bg-lime-2;
 
   width: 80%;
   height: 80%;

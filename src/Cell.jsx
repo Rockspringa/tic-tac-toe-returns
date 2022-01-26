@@ -1,26 +1,15 @@
 import "./Cell.css";
 import React from "react";
 
-class Cell extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { occupiedBy: "blank" };
-    this.occupyCell = this.occupyCell.bind(this);
-  }
-
-  occupyCell(e) {
-    if (this.state.occupiedBy === "blank")
-      this.setState({ occupiedBy: this.props.xTurn ? "x" : "o" });
-  }
-
-  render() {
-    return (
-      <div
-        className={`w-40 max-w-full aspect-square ${this.state.occupiedBy}`}
-        onClick={this.occupyCell}
-      />
-    );
-  }
+function Cell(props) {
+  return (
+    <div
+      className={`peer w-40 max-w-full aspect-square ${props.occupiedBy || "blank"}`}
+      onClick={props.onClick}
+    >
+      <span className={props.occupiedBy?.includes("winner") ? "block" : "hidden"}>Winner</span>
+    </div>
+  );
 }
 
 export default Cell;

@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 #grid {
-  background-color: rgb(202, 255, 117);
+  @apply bg-lime-2;
 }
